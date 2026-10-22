@@ -7,7 +7,6 @@ import { Process } from './components/sections/Process'
 import { Packages } from './components/sections/Packages'
 import { Results } from './components/sections/Results'
 import { Trust } from './components/sections/Trust'
-import { Team } from './components/sections/Team'
 import { Objections } from './components/sections/Objections'
 import { AuditForm } from './components/sections/AuditForm'
 import { Faq, FinalCta, Footer, MobileStickyCta } from './components/sections/Closing'
@@ -25,7 +24,6 @@ export default function App() {
         <Packages />
         <Results />
         <Trust />
-        <Team />
         <Objections />
         <AuditForm />
         <Faq />

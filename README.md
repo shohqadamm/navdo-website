@@ -14,7 +14,7 @@ npm run preview  # build natijasini ko'rish
 ## Tuzilma
 
 - `src/data/content.ts` — saytdagi barcha matnlar (brif asosida). Matnni shu yerda o'zgartiring.
-- `src/components/sections/` — 13 ta blok (Header → Footer).
+- `src/components/sections/` — bloklar (Header → Footer).
 - `src/components/ui/primitives.tsx` — Button, AuditButton, Reveal, SectionHeading, Logo.
 - `src/lib/leads.ts` — forma yuborish.
 - `src/lib/scroll.ts` — CTA → formaga scroll va paketni oldindan tanlash.
@@ -66,7 +66,6 @@ Har `git push` dan keyin Vercel saytni avtomatik yangilaydi. Env o'zgartirilsa �
 
 ## Keyin to'ldirish kerak
 
-- Asoschi va jamoa fotosuratlari (`Team.tsx`, hozir monogramma).
 - Mijozlar fikri — birinchi video-fikr tayyor bo'lgach (`Results.tsx` dagi izoh bloki o'rniga).
 - Boshqargan do'konlar soni, jami sotilgan tovarlar (brifda "To'ldirish kerak").
 - OG rasm (`index.html`) va analitika (Meta Pixel / GA) — ixtiyoriy.

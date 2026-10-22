@@ -227,16 +227,6 @@ export const guarantees = [
   'Bir sohada faqat siz bilan ishlash',
 ]
 
-export const teamSkills = [
-  'Do‘kon ochish',
-  'Kartochkalar',
-  'Foto',
-  'Narx siyosati',
-  'Uzum ichki reklamasi',
-  'FBO logistika',
-  'FBS logistika',
-]
-
 export const objections = [
   {
     q: '“Qimmat”',

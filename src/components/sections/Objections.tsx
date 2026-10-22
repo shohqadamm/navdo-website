@@ -17,7 +17,7 @@ export function Objections() {
   }
 
   return (
-    <section aria-labelledby="objections-title" className="py-20 lg:py-28">
+    <section aria-labelledby="objections-title" className="bg-paper py-20 lg:py-28">
       <div className="container">
         <SectionHeading
           id="objections-title"
