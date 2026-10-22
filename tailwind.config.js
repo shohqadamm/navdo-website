@@ -9,7 +9,7 @@ export default {
     },
     extend: {
       colors: {
-        // Navdo brendbuk: Samarqand ko'ki (asosiy), oltin (faqat belgi), to'q kulrang, oq
+        // Navdo brendbuk: Samarqand ko'ki (asosiy), logodagi sariq (aksent), to'q kulrang, oq
         brand: {
           50: '#EEF5FB',
           100: '#D7E7F4',
@@ -19,7 +19,12 @@ export default {
           700: '#094C7F',
           800: '#073A61',
         },
-        gold: '#D4A94F',
+        // Navdo logosidagi strelka rangi. 600 — oq fonda ikonkalar uchun bir ton to'qroq
+        gold: {
+          DEFAULT: '#F8B614',
+          50: '#FEF6DC',
+          600: '#E0A000',
+        },
         ink: {
           DEFAULT: '#111827',
           700: '#1F2937',

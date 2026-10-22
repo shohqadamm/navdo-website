@@ -47,7 +47,7 @@ export function Packages() {
                   <span
                     className={cx(
                       'flex h-12 w-12 items-center justify-center rounded-2xl',
-                      featured ? 'bg-white/10 text-white' : 'bg-brand-50 text-brand-600',
+                      featured ? 'bg-gold/15 text-gold' : 'bg-gold-50 text-gold-600',
                     )}
                   >
                     <Icon aria-hidden className="h-6 w-6" />

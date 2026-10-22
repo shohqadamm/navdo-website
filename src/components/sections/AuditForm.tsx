@@ -140,7 +140,7 @@ export function AuditForm() {
       <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <Reveal>
           <p className="eyebrow !text-brand-100">
-            <span aria-hidden className="h-px w-6 bg-current" />
+            <span aria-hidden className="h-0.5 w-6 rounded-full bg-gold" />
             Bepul audit
           </p>
           <h2 id="audit-title" className="mt-4 text-h2 font-bold">

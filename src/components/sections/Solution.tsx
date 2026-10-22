@@ -32,10 +32,10 @@ export function Solution() {
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-400">Korxona</p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 font-semibold">
-                <Boxes aria-hidden className="h-5 w-5 text-brand-600" /> Tovar
+                <Boxes aria-hidden className="h-5 w-5 text-gold-600" /> Tovar
               </li>
               <li className="flex items-center gap-3 font-semibold">
-                <FileText aria-hidden className="h-5 w-5 text-brand-600" /> Hujjatlar
+                <FileText aria-hidden className="h-5 w-5 text-gold-600" /> Hujjatlar
               </li>
             </ul>
             <p className="mt-auto pt-6 text-sm text-ink-400">Sizdan shu xolos.</p>
@@ -66,13 +66,13 @@ export function Solution() {
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-400">Natija</p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 font-semibold">
-                <Store aria-hidden className="h-5 w-5 text-brand-600" /> Korxona nomidagi do‘kon
+                <Store aria-hidden className="h-5 w-5 text-gold-600" /> Korxona nomidagi do‘kon
               </li>
               <li className="flex items-center gap-3 font-semibold">
-                <Users2 aria-hidden className="h-5 w-5 text-brand-600" /> Butun O‘zbekiston xaridorlari
+                <Users2 aria-hidden className="h-5 w-5 text-gold-600" /> Butun O‘zbekiston xaridorlari
               </li>
               <li className="flex items-center gap-3 font-semibold">
-                <BarChart3 aria-hidden className="h-5 w-5 text-brand-600" /> Shaffof hisob
+                <BarChart3 aria-hidden className="h-5 w-5 text-gold-600" /> Shaffof hisob
               </li>
             </ul>
           </div>

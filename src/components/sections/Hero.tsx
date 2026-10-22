@@ -88,7 +88,7 @@ export function Hero() {
       <div className="container grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-500 shadow-card">
-            <MapPin aria-hidden className="h-3.5 w-3.5 text-brand-600" />
+            <MapPin aria-hidden className="h-3.5 w-3.5 text-gold-600" />
             Samarqanddagi ishlab chiqaruvchi va ulgurji korxonalar uchun
           </p>
           <h1 id="hero-title" className="mt-6 text-display font-extrabold text-ink">
@@ -106,13 +106,13 @@ export function Hero() {
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-500">
             <li className="inline-flex items-center gap-2">
-              <Timer aria-hidden className="h-4 w-4 text-brand-600" /> Audit 30–40 daqiqa
+              <Timer aria-hidden className="h-4 w-4 text-gold-600" /> Audit 30–40 daqiqa
             </li>
             <li className="inline-flex items-center gap-2">
-              <CheckCircle2 aria-hidden className="h-4 w-4 text-brand-600" /> Bepul
+              <CheckCircle2 aria-hidden className="h-4 w-4 text-gold-600" /> Bepul
             </li>
             <li className="inline-flex items-center gap-2">
-              <CheckCircle2 aria-hidden className="h-4 w-4 text-brand-600" /> Sotilish imkoniyati va foyda hisobi
+              <CheckCircle2 aria-hidden className="h-4 w-4 text-gold-600" /> Sotilish imkoniyati va foyda hisobi
             </li>
           </ul>
         </div>

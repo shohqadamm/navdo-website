@@ -74,7 +74,7 @@ export function Objections() {
             tabIndex={0}
             className="hidden flex-col rounded-4xl bg-brand-600 p-7 text-white sm:p-10 lg:sticky lg:top-28 lg:flex lg:self-start"
           >
-            <MessageCircleQuestion aria-hidden className="h-8 w-8 text-white/60" />
+            <MessageCircleQuestion aria-hidden className="h-8 w-8 text-gold" />
             <p className="mt-6 text-2xl font-bold tracking-tight">{objections[active].q}</p>
             <p key={active} className="mt-5 animate-[fadein_.35s_ease] text-lg leading-relaxed text-white/85">
               {objections[active].a}

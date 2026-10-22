@@ -23,7 +23,7 @@ export function Trust() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-ink-400">Xizmat shartnomasi</p>
                 <p className="mt-1 font-bold">Navdo × Korxona</p>
               </div>
-              <ShieldCheck aria-hidden className="h-8 w-8 text-brand-600" />
+              <ShieldCheck aria-hidden className="h-8 w-8 text-gold-600" />
             </div>
             <ul className="divide-y divide-line">
               {clauses.map((c) => (

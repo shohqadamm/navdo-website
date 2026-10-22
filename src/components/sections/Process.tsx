@@ -109,7 +109,7 @@ export function Process() {
               <h3 className="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">{step.title}</h3>
               <p className="mt-4 max-w-lg text-lg leading-relaxed text-ink-500">{step.text}</p>
               <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-line px-4 py-3">
-                <PackageCheck aria-hidden className="h-5 w-5 text-brand-600" />
+                <PackageCheck aria-hidden className="h-5 w-5 text-gold-600" />
                 <span className="text-sm">
                   <span className="text-ink-400">Natija: </span>
                   <span className="font-semibold">{step.output}</span>

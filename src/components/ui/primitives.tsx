@@ -119,7 +119,7 @@ export function SectionHeading({
   return (
     <Reveal className={cx('max-w-3xl', align === 'center' && 'mx-auto text-center')}>
       <p className={cx('eyebrow', inverted && '!text-brand-200')}>
-        <span aria-hidden className="h-px w-6 bg-current" />
+        <span aria-hidden className="h-0.5 w-6 rounded-full bg-gold" />
         {eyebrow}
       </p>
       <h2 id={id} className={cx('mt-4 text-h2 font-bold', inverted ? 'text-white' : 'text-ink')}>
