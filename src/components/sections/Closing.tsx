@@ -61,34 +61,6 @@ export function Faq() {
   )
 }
 
-export function FinalCta() {
-  return (
-    <section aria-labelledby="final-title" className="pb-20 lg:pb-28">
-      <div className="container">
-        <Reveal className="relative overflow-hidden rounded-4xl bg-brand-600 px-6 py-16 text-center text-white sm:px-12 lg:py-24">
-          <img src="/navdo-mark.png" alt="" aria-hidden className="pointer-events-none absolute -right-10 -top-10 w-64 opacity-[0.07] sm:w-96" />
-          <p className="eyebrow !text-gold">Navdo — yangi davr savdosi</p>
-          <h2 id="final-title" className="mx-auto mt-5 max-w-3xl text-h2 font-bold">
-            Tovaringiz omborda emas, butun O‘zbekiston bo‘ylab xaridorda bo‘lsin
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
-            Birinchi qadam — bepul audit. 30–40 daqiqada sotilish imkoniyati va taxminiy foydani hisoblab beramiz.
-          </p>
-          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <AuditButton source="final" variant="inverse" size="lg" />
-            <a
-              href={contacts.phoneHref}
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 px-7 font-semibold hover:bg-white/5"
-            >
-              <Phone aria-hidden className="h-4 w-4" /> {contacts.phoneDisplay}
-            </a>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
 export function Footer() {
   return (
     <footer className="curve-top bg-paper pb-28 pt-14 lg:pb-14">

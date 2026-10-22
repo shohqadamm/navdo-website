@@ -9,7 +9,7 @@ import { Results } from './components/sections/Results'
 import { Trust } from './components/sections/Trust'
 import { Objections } from './components/sections/Objections'
 import { AuditForm } from './components/sections/AuditForm'
-import { Faq, FinalCta, Footer, MobileStickyCta } from './components/sections/Closing'
+import { Faq, Footer, MobileStickyCta } from './components/sections/Closing'
 
 export default function App() {
   return (
@@ -27,7 +27,6 @@ export default function App() {
         <Objections />
         <AuditForm />
         <Faq />
-        <FinalCta />
       </main>
       <Footer />
       <MobileStickyCta />
