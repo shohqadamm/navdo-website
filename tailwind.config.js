@@ -48,6 +48,7 @@ export default {
       boxShadow: {
         card: '0 1px 2px rgba(17,24,39,.04), 0 8px 24px -12px rgba(17,24,39,.12)',
         float: '0 24px 60px -24px rgba(11,94,156,.35)',
+        gold: '0 16px 36px -16px rgba(224,160,0,.6)',
       },
     },
   },

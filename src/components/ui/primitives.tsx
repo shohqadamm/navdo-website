@@ -27,10 +27,11 @@ export function Logo({ inverted = false, className }: { inverted?: boolean; clas
 type Variant = 'primary' | 'secondary' | 'ghost' | 'inverse'
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-brand-600 text-white hover:bg-brand-700 shadow-float',
+  // Asosiy CTA — logodagi sariq; oq matn o'qilmaydi, shuning uchun to'q matn
+  primary: 'bg-gold text-ink hover:bg-gold-600 shadow-gold',
   secondary: 'bg-white text-ink border border-line hover:border-ink-300',
   ghost: 'text-ink hover:bg-paper',
-  inverse: 'bg-white text-brand-800 hover:bg-brand-50',
+  inverse: 'bg-gold text-ink hover:bg-gold-600',
 }
 
 type ButtonProps<T extends ElementType> = {
