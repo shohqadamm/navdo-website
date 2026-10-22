@@ -13,7 +13,7 @@ function Connector() {
 
 export function Solution() {
   return (
-    <section id="yechim" aria-labelledby="yechim-title" className="py-20 lg:py-28">
+    <section id="yechim" aria-labelledby="yechim-title" className="curve-top bg-white py-20 lg:py-28">
       <div className="container">
         <SectionHeading
           id="yechim-title"

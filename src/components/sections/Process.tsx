@@ -31,7 +31,7 @@ export function Process() {
   }
 
   return (
-    <section id="jarayon" aria-labelledby="jarayon-title" className="bg-paper py-20 lg:py-28">
+    <section id="jarayon" aria-labelledby="jarayon-title" className="curve-top bg-paper py-20 lg:py-28">
       <div className="container">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
@@ -131,7 +131,7 @@ export function Process() {
                   type="button"
                   onClick={() => select(active + 1)}
                   aria-label="Keyingi bosqich"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-white hover:bg-ink-700"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-600 text-white hover:bg-brand-700"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>

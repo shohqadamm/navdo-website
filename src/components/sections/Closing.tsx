@@ -6,7 +6,7 @@ import { AuditButton, Logo, Reveal, SectionHeading, cx } from '../ui/primitives'
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0)
   return (
-    <section id="savollar" aria-labelledby="faq-title" className="py-20 lg:py-28">
+    <section id="savollar" aria-labelledby="faq-title" className="curve-top bg-white py-20 lg:py-28">
       <div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div>
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Ko‘p beriladigan savollar" />
@@ -35,7 +35,7 @@ export function Faq() {
                     <span
                       className={cx(
                         'flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300',
-                        isOpen ? 'rotate-45 border-ink bg-ink text-white' : 'border-line',
+                        isOpen ? 'rotate-45 border-brand-600 bg-brand-600 text-white' : 'border-line',
                       )}
                     >
                       <Plus aria-hidden className="h-4 w-4" />
@@ -65,7 +65,7 @@ export function FinalCta() {
   return (
     <section aria-labelledby="final-title" className="pb-20 lg:pb-28">
       <div className="container">
-        <Reveal className="relative overflow-hidden rounded-4xl bg-ink px-6 py-16 text-center text-white sm:px-12 lg:py-24">
+        <Reveal className="relative overflow-hidden rounded-4xl bg-brand-600 px-6 py-16 text-center text-white sm:px-12 lg:py-24">
           <img src="/navdo-mark.png" alt="" aria-hidden className="pointer-events-none absolute -right-10 -top-10 w-64 opacity-[0.07] sm:w-96" />
           <p className="eyebrow !text-gold">Navdo — yangi davr savdosi</p>
           <h2 id="final-title" className="mx-auto mt-5 max-w-3xl text-h2 font-bold">
@@ -91,7 +91,7 @@ export function FinalCta() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-paper pb-28 pt-14 lg:pb-14">
+    <footer className="curve-top bg-paper pb-28 pt-14 lg:pb-14">
       <div className="container grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Logo />

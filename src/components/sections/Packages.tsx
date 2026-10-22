@@ -20,7 +20,7 @@ function CellValue({ v }: { v: Cell }) {
 
 export function Packages() {
   return (
-    <section id="paketlar" aria-labelledby="paketlar-title" className="py-20 lg:py-28">
+    <section id="paketlar" aria-labelledby="paketlar-title" className="curve-top bg-white py-20 lg:py-28">
       <div className="container">
         <SectionHeading
           id="paketlar-title"
@@ -40,7 +40,7 @@ export function Packages() {
                 delay={i * 80}
                 className={cx(
                   'relative flex flex-col rounded-4xl p-7 sm:p-9',
-                  featured ? 'bg-ink text-white shadow-float' : 'card',
+                  featured ? 'bg-brand-600 text-white shadow-float' : 'card',
                 )}
               >
                 <div className="flex items-center justify-between">

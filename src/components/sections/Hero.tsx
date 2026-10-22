@@ -79,11 +79,20 @@ function ProductCardMock() {
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-24 lg:pt-40">
+    <section id="top" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-brand-50 pb-16 pt-28 sm:pt-32 lg:pb-24 lg:pt-40">
       {/* Nozik grid fon */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 [background-image:linear-gradient(#E5E7EB_1px,transparent_1px),linear-gradient(90deg,#E5E7EB_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)] opacity-60"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:linear-gradient(#D7E7F4_1px,transparent_1px),linear-gradient(90deg,#D7E7F4_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)] opacity-60"
+      />
+      {/* Uzum uslubidagi yumshoq yorug'lik */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,0)_65%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-48 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(175,205,232,.55),rgba(175,205,232,0)_65%)]"
       />
       <div className="container grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
         <div>

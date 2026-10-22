@@ -12,7 +12,7 @@ const clauses = [
 
 export function Trust() {
   return (
-    <section aria-labelledby="trust-title" className="py-20 lg:py-28">
+    <section aria-labelledby="trust-title" className="curve-top bg-white py-20 lg:py-28">
       <div className="container grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Shartnoma vizuali */}
         <Reveal className="relative order-2 lg:order-1">

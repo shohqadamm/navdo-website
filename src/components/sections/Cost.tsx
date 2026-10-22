@@ -3,7 +3,7 @@ import { AuditButton, Reveal, SectionHeading } from '../ui/primitives'
 
 export function Cost() {
   return (
-    <section aria-labelledby="cost-title" className="bg-ink py-20 text-white lg:py-28">
+    <section aria-labelledby="cost-title" className="curve-top bg-brand-600 py-20 text-white lg:py-28">
       <div className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading

@@ -136,7 +136,7 @@ export function AuditForm() {
   })
 
   return (
-    <section id="audit" aria-labelledby="audit-title" className="bg-brand-600 py-20 text-white lg:py-28">
+    <section id="audit" aria-labelledby="audit-title" className="curve-top bg-brand-600 py-20 text-white lg:py-28">
       <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <Reveal>
           <p className="eyebrow !text-brand-100">

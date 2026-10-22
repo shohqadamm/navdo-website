@@ -60,7 +60,7 @@ function GrowthCompare() {
 
 export function Results() {
   return (
-    <section id="natijalar" aria-labelledby="natijalar-title" className="bg-paper py-20 lg:py-28">
+    <section id="natijalar" aria-labelledby="natijalar-title" className="curve-top bg-paper py-20 lg:py-28">
       <div className="container">
         <SectionHeading
           id="natijalar-title"

@@ -70,3 +70,27 @@
     transform: none;
   }
 }
+
+/* Bloklar orasidagi yoysimon o'tish (uzum.com uslubi):
+   bo'lim o'z fon rangida yuqoriga qavariq yoy bilan boshlanadi. */
+:root {
+  --curve-h: clamp(28px, 5vw, 72px);
+}
+html,
+body {
+  overflow-x: clip;
+}
+.curve-top {
+  position: relative;
+}
+.curve-top::before {
+  content: '';
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: calc(var(--curve-h) * -1 + 1px);
+  height: var(--curve-h);
+  background: inherit;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events: none;
+}

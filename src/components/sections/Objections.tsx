@@ -17,7 +17,7 @@ export function Objections() {
   }
 
   return (
-    <section aria-labelledby="objections-title" className="bg-paper py-20 lg:py-28">
+    <section aria-labelledby="objections-title" className="curve-top bg-paper py-20 lg:py-28">
       <div className="container">
         <SectionHeading
           id="objections-title"
@@ -42,7 +42,7 @@ export function Objections() {
                 onClick={() => setActive(i)}
                 className={cx(
                   'rounded-2xl border px-5 py-4 text-left text-[17px] font-semibold transition-all',
-                  active === i ? 'border-ink bg-ink text-white' : 'border-line bg-white text-ink-700 hover:border-ink-300',
+                  active === i ? 'border-brand-700 bg-brand-700 text-white' : 'border-line bg-white text-ink-700 hover:border-ink-300',
                 )}
               >
                 {o.q}

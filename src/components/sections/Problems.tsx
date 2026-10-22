@@ -9,7 +9,7 @@ export function Problems() {
   const toggle = (i: number) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]))
 
   return (
-    <section id="muammo" aria-labelledby="muammo-title" className="bg-paper py-20 lg:py-28">
+    <section id="muammo" aria-labelledby="muammo-title" className="curve-top bg-paper py-20 lg:py-28">
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <SectionHeading
@@ -61,7 +61,7 @@ export function Problems() {
         <div
           className={cx(
             'mt-6 flex flex-col items-start justify-between gap-5 rounded-3xl p-6 transition-colors sm:flex-row sm:items-center sm:p-8',
-            picked.length ? 'bg-ink text-white' : 'border border-dashed border-line bg-white',
+            picked.length ? 'bg-brand-600 text-white' : 'border border-dashed border-line bg-white',
           )}
           aria-live="polite"
         >
