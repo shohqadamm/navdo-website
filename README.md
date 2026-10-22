@@ -19,6 +19,20 @@ npm run preview  # build natijasini ko'rish
 - `src/lib/leads.ts` — forma yuborish.
 - `src/lib/scroll.ts` — CTA → formaga scroll va paketni oldindan tanlash.
 
+## Opt-in sahifalar (reklama uchun)
+
+| Manzil | Forma |
+|---|---|
+| `/opt-in` | ism, telefon, mahsulot turi, savdo kanali |
+| `/opt-in2` | faqat ism va telefon |
+
+- Kod: `src/pages/OptIn.tsx` (`variant="full" | "short"`), yo'naltirish `src/main.tsx` da.
+- Vercel'da `vercel.json` ikkala manzilni `index.html` ga yo'naltiradi.
+- Arizalar asosiy forma kabi `/api/lead` → Telegram botga keladi. Xabarda **Sahifa** (`/opt-in`, `/opt-in2`, `/`) yoziladi.
+- Reklama havolasiga UTM qo'shing — u xabarda **Manba** bo'lib chiqadi:
+  `navdo.uz/opt-in2?utm_source=instagram&utm_campaign=oktabr` → `Manba: instagram/oktabr`.
+- Sahifalar `noindex`: qidiruvda asosiy sayt bilan raqobat qilmaydi.
+
 ## Arizalar → Telegram bot
 
 Forma `POST /api/lead` ga yuboradi. Server arizani tekshiradi va Telegram botga xabar qiladi.

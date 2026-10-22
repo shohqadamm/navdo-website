@@ -9,10 +9,12 @@
 export type LeadPayload = {
   name: string
   phone: string
-  company: string
-  channel: string
-  packageInterest: string
+  company?: string
+  channel?: string
+  packageInterest?: string
   source: string
+  /** Ariza qaysi sahifadan: '/', '/opt-in', '/opt-in2' */
+  page: string
   /** Honeypot: odam uchun bo'sh qoladi */
   website: string
 }

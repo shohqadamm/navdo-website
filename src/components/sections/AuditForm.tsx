@@ -1,9 +1,11 @@
-import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useId, useState, type FormEvent } from 'react'
 import { AlertTriangle, CheckCircle2, Clock, Loader2, Phone, Send } from 'lucide-react'
 import { contacts, salesChannels, type PackageId } from '../../data/content'
 import { LeadNotConfiguredError, submitLead } from '../../lib/leads'
 import { AUDIT_EVENT, type AuditDetail } from '../../lib/scroll'
+import { formatPhone, isPhoneComplete, toE164 } from '../../lib/phone'
 import { Button, Reveal, cx } from '../ui/primitives'
+import { Field } from '../ui/Field'
 
 type Values = { name: string; phone: string; company: string; channel: string; packageInterest: string; website: string }
 type Errors = Partial<Record<keyof Values, string>>
@@ -21,57 +23,13 @@ const auditGives = [
   'Qaysi paket mosligi bo‘yicha tavsiya',
 ]
 
-/** +998 XX XXX XX XX formatlash: faqat 9 ta milliy raqam saqlanadi. */
-function formatPhone(raw: string) {
-  let d = raw.replace(/\D/g, '')
-  if (d.startsWith('998')) d = d.slice(3)
-  d = d.slice(0, 9)
-  const parts = [d.slice(0, 2), d.slice(2, 5), d.slice(5, 7), d.slice(7, 9)].filter(Boolean)
-  return parts.length ? `+998 ${parts.join(' ')}` : ''
-}
-const phoneDigits = (v: string) => v.replace(/\D/g, '').replace(/^998/, '')
-
 function validate(v: Values): Errors {
   const e: Errors = {}
   if (v.name.trim().length < 2) e.name = 'Ismingizni kiriting'
-  if (phoneDigits(v.phone).length !== 9) e.phone = 'Telefon raqamini to‘liq kiriting: +998 XX XXX XX XX'
+  if (!isPhoneComplete(v.phone)) e.phone = 'Telefon raqamini to‘liq kiriting: +998 XX XXX XX XX'
   if (v.company.trim().length < 2) e.company = 'Kompaniya yoki mahsulot turini kiriting'
   if (!v.channel) e.channel = 'Hozirgi savdo kanalini tanlang'
   return e
-}
-
-function Field({
-  id,
-  label,
-  error,
-  hint,
-  children,
-}: {
-  id: string
-  label: string
-  error?: string
-  hint?: string
-  children: ReactNode
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="mb-2 block text-sm font-semibold text-ink-700">
-        {label}
-      </label>
-      {children}
-      {error ? (
-        <p id={`${id}-error`} className="mt-1.5 text-sm font-medium text-red-600">
-          {error}
-        </p>
-      ) : (
-        hint && (
-          <p id={`${id}-hint`} className="mt-1.5 text-xs text-ink-400">
-            {hint}
-          </p>
-        )
-      )}
-    </div>
-  )
 }
 
 const empty: Values = { name: '', phone: '', company: '', channel: '', packageInterest: '', website: '' }
@@ -116,12 +74,13 @@ export function AuditForm() {
     try {
       await submitLead({
         name: values.name.trim(),
-        phone: `+998${phoneDigits(values.phone)}`,
+        phone: toE164(values.phone),
         company: values.company.trim(),
         channel: values.channel,
         packageInterest: values.packageInterest || 'unknown',
         source,
         website: values.website,
+        page: '/',
       })
       setStatus('success')
     } catch (err) {

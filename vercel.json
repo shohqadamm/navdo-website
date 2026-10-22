@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/opt-in", "destination": "/index.html" },
+    { "source": "/opt-in/", "destination": "/index.html" },
+    { "source": "/opt-in2", "destination": "/index.html" },
+    { "source": "/opt-in2/", "destination": "/index.html" }
+  ]
+}

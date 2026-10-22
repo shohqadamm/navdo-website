@@ -9,7 +9,7 @@ export type LeadEnv = {
 
 export type LeadResult = { status: number; body: { ok: boolean; error?: string } }
 
-const MAX = { name: 80, company: 160, channel: 80, source: 40 }
+const MAX = { name: 80, company: 160, channel: 80, source: 40, page: 40 }
 
 const packageNames: Record<string, string> = {
   start: 'Start',
@@ -24,6 +24,7 @@ type Lead = {
   channel: string
   packageInterest: string
   source: string
+  page: string
 }
 
 const str = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
@@ -41,10 +42,12 @@ function parseLead(input: unknown): Lead | null {
     channel: str(o.channel, MAX.channel),
     packageInterest: str(o.packageInterest, 20),
     source: str(o.source, MAX.source),
+    page: str(o.page, MAX.page),
   }
-  if (lead.name.length < 2 || lead.company.length < 2 || !lead.channel) return null
+  // Majburiy faqat ism va telefon; kompaniya, kanal va paket sahifaga qarab ixtiyoriy
+  if (lead.name.length < 2) return null
   if (!/^\+998\d{9}$/.test(lead.phone)) return null
-  if (!(lead.packageInterest in packageNames)) lead.packageInterest = 'unknown'
+  if (lead.packageInterest && !(lead.packageInterest in packageNames)) lead.packageInterest = 'unknown'
   return lead
 }
 
@@ -57,18 +60,21 @@ function formatPhone(p: string) {
 
 export function formatLeadMessage(lead: Lead, now = new Date()) {
   const time = now.toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent', dateStyle: 'short', timeStyle: 'short' })
+  // Faqat to'ldirilgan maydonlar chiqadi (/opt-in2 dan faqat ism va telefon keladi)
   return [
     '<b>🆕 Bepul audit — yangi ariza</b>',
     '',
     `<b>Ism:</b> ${esc(lead.name)}`,
     // Telegram raqamni o'zi bosiladigan qiladi; tel: havolalarini Bot API qabul qilmaydi
     `<b>Telefon:</b> ${formatPhone(lead.phone)}`,
-    `<b>Kompaniya / mahsulot:</b> ${esc(lead.company)}`,
-    `<b>Savdo kanali:</b> ${esc(lead.channel)}`,
-    `<b>Paket:</b> ${packageNames[lead.packageInterest]}`,
+    lead.company ? `<b>Kompaniya / mahsulot:</b> ${esc(lead.company)}` : null,
+    lead.channel ? `<b>Savdo kanali:</b> ${esc(lead.channel)}` : null,
+    lead.packageInterest ? `<b>Paket:</b> ${packageNames[lead.packageInterest]}` : null,
     '',
-    `<i>Manba: ${esc(lead.source || 'direct')} · ${time}</i>`,
-  ].join('\n')
+    `<i>Sahifa: ${esc(lead.page || '/')} · Manba: ${esc(lead.source || 'direct')} · ${time}</i>`,
+  ]
+    .filter((l) => l !== null)
+    .join('\n')
 }
 
 export async function handleLead(input: unknown, env: LeadEnv): Promise<LeadResult> {
