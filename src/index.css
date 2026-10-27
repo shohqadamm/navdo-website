@@ -93,3 +93,73 @@ body {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   pointer-events: none;
 }
+
+
+/* --- Awwwards uslubidagi kursor va tugmalar --- */
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+.has-cursor input,
+.has-cursor textarea {
+  cursor: text !important;
+}
+.has-cursor select {
+  cursor: pointer !important;
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  pointer-events: none;
+  border-radius: 9999px;
+  /* Oq + difference: oq fonda to'q, ko'k fonda och ko'rinadi */
+  mix-blend-mode: difference;
+}
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #fff;
+  display: grid;
+  place-items: center;
+}
+/* CTA ustida: logodagi sariq doira, yozuv bilan (to'q ko'k tugma fonida ajralib turadi) */
+.cursor-ring.is-label {
+  mix-blend-mode: normal;
+  background: #f8b614;
+  border-color: #f8b614;
+  box-shadow: 0 12px 30px -10px rgba(224, 160, 0, 0.7);
+}
+.cursor-label {
+  font: 800 12px/1 Manrope, system-ui, sans-serif;
+  color: #111827;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* Tugma: kursor kirgan nuqtadan rang to'ladi (--x/--y JS'dan) */
+.btn-fx::before {
+  content: '';
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  z-index: 0;
+  width: 260%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: var(--fill);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  pointer-events: none;
+}
+.btn-fx:hover::before,
+.btn-fx:focus-visible::before {
+  transform: translate(-50%, -50%) scale(1);
+}

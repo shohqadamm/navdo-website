@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { OptInPage } from './pages/OptIn.tsx'
 import { Loader } from './components/Loader.tsx'
+import { Cursor } from './components/Cursor.tsx'
 import { initSmoothScroll } from './lib/smooth.ts'
 
 initSmoothScroll()
@@ -18,5 +19,6 @@ createRoot(document.getElementById('root')!).render(
     {/* Reklama sahifalarida loader qisqaroq — har soniya konversiyaga ta'sir qiladi */}
     <Loader minMs={isOptIn ? 900 : 1700} />
     {page}
+    <Cursor />
   </StrictMode>,
 )
