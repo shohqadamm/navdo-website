@@ -1,11 +1,15 @@
 import { useEffect } from 'react'
 import { gsap, markPageReady, reducedMotion, startScroll, stopScroll } from '../lib/smooth'
 
+const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+
 /**
  * index.html dagi #boot loaderni yopadi.
- * Kamida `minMs` ko'rsatiladi (logo animatsiyasi tugashi uchun), lekin 3 soniyadan oshmaydi.
+ * Sayt qanchalik tez yuklanmasin, logo animatsiyasi doim oxirigacha o'ynaydi:
+ * #boot ichidagi CSS animatsiyalarining o'zi tugashi kutiladi, keyin `holdMs` pauza.
+ * Animatsiyalar umuman ishlamasa (masalan, fon vkladka) — `MAX_MS` dan keyin baribir yopiladi.
  */
-export function Loader({ minMs = 1700 }: { minMs?: number }) {
+export function Loader({ holdMs = 300 }: { holdMs?: number }) {
   useEffect(() => {
     const boot = document.getElementById('boot')
     if (!boot) {
@@ -14,18 +18,22 @@ export function Loader({ minMs = 1700 }: { minMs?: number }) {
     }
     stopScroll()
 
-    const MAX_MS = 3000
-    const elapsed = () => performance.now()
+    const MAX_MS = 4500
     const loaded = new Promise<void>((r) => (document.readyState === 'complete' ? r() : window.addEventListener('load', () => r(), { once: true })))
     const fonts = document.fonts?.ready ?? Promise.resolve()
-    const minDelay = new Promise<void>((r) => setTimeout(r, Math.max(0, minMs - elapsed())))
-    const cap = new Promise<void>((r) => setTimeout(r, Math.max(0, MAX_MS - elapsed())))
+    // Logo chizilishi, rang, strelka, yozuv va progress chizig'i — hammasi tugaguncha
+    const animations =
+      typeof boot.getAnimations === 'function'
+        ? Promise.all(boot.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => undefined))).then(() => undefined)
+        : wait(1800)
+    const animationsDone = animations.then(() => wait(holdMs))
+    const cap = wait(MAX_MS)
 
     let tl: gsap.core.Timeline | undefined
     let cancelled = false
     let fallback = 0
 
-    Promise.race([Promise.all([loaded, fonts, minDelay]), cap]).then(() => {
+    Promise.race([Promise.all([loaded, fonts, animationsDone]), cap]).then(() => {
       if (cancelled) return
       const finish = () => {
         boot.remove()
@@ -60,7 +68,7 @@ export function Loader({ minMs = 1700 }: { minMs?: number }) {
       tl?.kill()
       window.clearTimeout(fallback)
     }
-  }, [minMs])
+  }, [holdMs])
 
   return null
 }

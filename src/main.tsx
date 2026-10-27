@@ -16,8 +16,8 @@ const page = path === '/opt-in' ? <OptInPage variant="full" /> : path === '/opt-
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Reklama sahifalarida loader qisqaroq — har soniya konversiyaga ta'sir qiladi */}
-    <Loader minMs={isOptIn ? 900 : 1700} />
+    {/* Loader logo animatsiyasi tugaguncha turadi; opt-in'da yopilishdan oldingi pauza qisqaroq */}
+    <Loader holdMs={isOptIn ? 100 : 300} />
     {page}
     <Cursor />
   </StrictMode>,
