@@ -36,9 +36,13 @@ export function Loader({ minMs = 1700 }: { minMs?: number }) {
         finish()
         return
       }
+      const parts = boot.querySelectorAll<HTMLElement>('.mark, .word, .bar')
+      // CSS kirish animatsiyasi (forwards) inline opacity'dan ustun turadi — o'chirib, GSAP'ga beramiz
+      gsap.set(parts, { animation: 'none', opacity: 1 })
       tl = gsap
         .timeline({ onComplete: finish })
-        .to(boot.querySelectorAll('.mark, .word, .bar'), { y: -24, opacity: 0, duration: 0.35, stagger: 0.05, ease: 'power2.in' })
+        // Logo, matn va chiziq birga, bir xil tezlikda
+        .to(parts, { y: -24, opacity: 0, duration: 0.35, ease: 'power2.in' })
         .add(markPageReady, '-=0.05')
         // Oq parda yuqoriga ko'tarilib sahifani ochadi
         .to(boot, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.75, ease: 'power3.inOut' }, '<')
