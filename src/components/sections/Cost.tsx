@@ -1,10 +1,11 @@
 import { losses } from '../../data/content'
 import { AuditButton, Reveal, SectionHeading } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 export function Cost() {
   return (
     <section aria-labelledby="cost-title" className="curve-top bg-brand-600 py-20 text-white lg:py-28">
-      <div className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div data-scroll-scale="0.9" className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading
             id="cost-title"
@@ -22,8 +23,10 @@ export function Cost() {
 
         <ol className="border-t border-white/10">
           {losses.map((l, i) => (
-            <Reveal as="li" key={l.title} delay={i * 60} className="grid grid-cols-[auto_1fr] gap-6 border-b border-white/10 py-8 sm:gap-10">
-              <span className="text-4xl font-extrabold tabular-nums text-white/20 sm:text-5xl">0{i + 1}</span>
+            <Reveal as="li" key={l.title} delay={i * 60} className="grid grid-cols-[auto_1fr] items-start gap-6 border-b border-white/10 py-8 sm:gap-10">
+              <span data-icon-host>
+                <Icon3D name={l.icon} />
+              </span>
               <div>
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">{l.title}</h3>
                 <p className="mt-3 max-w-lg leading-relaxed text-white/60">{l.text}</p>

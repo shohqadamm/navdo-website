@@ -1,4 +1,6 @@
 // Barcha matnlar Navdo biznes brifiga (21.10.2026) asoslangan.
+import type { IconName } from '../components/ui/Icon3D'
+
 // Brifda yo'q fakt qo'shmang. "TODO" belgilari — keyin to'ldiriladigan joylar.
 
 export const contacts = {
@@ -21,26 +23,38 @@ export const nav = [
 
 export const problems = [
   {
+    icon: 'chart-down' as IconName,
+
     title: 'Bozor va ulgurji savdo pasaydi',
     text: 'Eski mijozlar kamroq olmoqda, yangi sotuv kanali kerak — lekin qaysi biri ishlashini bilmaysiz.',
   },
   {
+    icon: 'package' as IconName,
+
     title: 'Ombor to‘lib qolgan',
     text: 'Tovar aylanmayapti. Ishlab chiqarilgan mahsulot pulga emas, yukga aylanmoqda.',
   },
   {
+    icon: 'eyes' as IconName,
+
     title: 'Raqobatchi allaqachon Uzumda',
     text: 'Siz o‘xshash tovar ishlab chiqarasiz, lekin butun O‘zbekiston bo‘ylab xaridorni u olmoqda.',
   },
   {
+    icon: 'store' as IconName,
+
     title: 'Do‘kon ochdik — sotilmadi',
     text: 'Uzumda do‘kon bor, kartochkalar yuklangan, ammo buyurtmalar deyarli yo‘q.',
   },
   {
+    icon: 'briefcase' as IconName,
+
     title: 'Xodim yolladik — natija yo‘q',
     text: 'Marketpleysni “tushunadigan” odam topildi, maosh to‘landi, lekin savdo o‘smadi.',
   },
   {
+    icon: 'money-wings' as IconName,
+
     title: 'Filial ochish qimmat',
     text: 'Butun O‘zbekistonga sotish istagi bor, ammo har viloyatda do‘kon va xodim ushlash qimmatga tushadi.',
   },
@@ -48,18 +62,26 @@ export const problems = [
 
 export const losses = [
   {
+    icon: 'ice' as IconName,
+
     title: 'Ombordagi tovar — muzlab qolgan pul',
     text: 'Har bir sotilmagan partiya aylanma mablag‘ni band qiladi va yangi ishlab chiqarishni sekinlashtiradi.',
   },
   {
+    icon: 'cart' as IconName,
+
     title: 'Xaridor raqobatchiga ketmoqda',
     text: 'Uzumda sizning toifangizdagi tovarni qidirgan odam boshqa sotuvchidan xarid qiladi. Bu sharh va reyting unga qoladi.',
   },
   {
+    icon: 'hourglass' as IconName,
+
     title: 'Sinov va xatolar uchun vaqt',
     text: 'Hujjatlar, kartochka, foto, narx, reklama va logistikani mustaqil o‘rganish oylarni oladi — xatolar esa pulni.',
   },
   {
+    icon: 'receipt' as IconName,
+
     title: 'Komissiya hisobsiz narx — foydasiz savdo',
     text: 'Uzum komissiyasi va logistika narxga to‘g‘ri kiritilmasa, sotuv bo‘ladi, lekin foyda qolmaydi.',
   },
@@ -78,18 +100,26 @@ export const solutionItems = [
 
 export const advantages = [
   {
+    icon: 'puzzle' as IconName,
+
     title: 'Hammasi bir joyda',
     text: 'Do‘kon ochishdan reklamagacha. Korxona faqat tovar beradi.',
   },
   {
+    icon: 'card-index' as IconName,
+
     title: 'Har bir kartochka to‘liq',
     text: 'Barcha maydonlar to‘ldiriladi, mahsulot infografika bilan chiqadi.',
   },
   {
+    icon: 'money-bag' as IconName,
+
     title: 'Foyda yo‘qolmaydigan narx',
     text: 'Narx Uzum komissiyasi va logistikani hisobga olib qo‘yiladi.',
   },
   {
+    icon: 'magnifier' as IconName,
+
     title: 'Shaffof hisob',
     text: '“Sof foyda” formulasi va tannarx shartnomada oldindan yoziladi.',
   },
@@ -97,42 +127,56 @@ export const advantages = [
 
 export const steps = [
   {
+    icon: 'handshake' as IconName,
+
     when: '1-kun',
     title: 'Shartnoma',
     text: 'Shartnoma imzolanadi va oldindan to‘lov qilinadi. “Sof foyda” formulasi, tannarx va maxfiylik shartlari shu yerda yoziladi.',
     output: 'Imzolangan shartnoma',
   },
   {
+    icon: 'bar-chart' as IconName,
+
     when: '1-hafta',
     title: 'Toifa tahlili va narx strategiyasi',
     text: 'Toifangizdagi raqobatni o‘rganamiz, qaysi tovarlardan boshlashni tanlaymiz va komissiya hamda logistikani hisobga olgan narx siyosatini tuzamiz.',
     output: 'Assortiment va narx rejasi',
   },
   {
+    icon: 'department-store' as IconName,
+
     when: '1–2-hafta',
     title: 'Hujjatlar va do‘kon ochish',
     text: 'Hujjatlaringizni tekshiramiz va Uzum Market’da do‘konni korxonangiz nomiga ochamiz.',
     output: 'Korxona nomidagi do‘kon',
   },
   {
+    icon: 'camera' as IconName,
+
     when: '2–3-hafta',
     title: 'Sexda fotosessiya va infografika',
     text: 'Sexingizga kelamiz, tovarni joyida ko‘ramiz va suratga olamiz. Har bir mahsulot uchun infografika tayyorlanadi.',
     output: 'Foto va infografika',
   },
   {
+    icon: 'check' as IconName,
+
     when: '3-hafta',
     title: 'Kartochkalar va moderatsiya',
     text: 'To‘liq to‘ldirilgan kartochkalarni yuklaymiz va Uzum moderatsiyasidan o‘tkazamiz.',
     output: 'Faol kartochkalar',
   },
   {
+    icon: 'truck' as IconName,
+
     when: '3–4-hafta',
     title: 'Ombor va reklama',
     text: 'Birinchi partiya Uzum omboriga topshiriladi va ichki reklama ishga tushiriladi.',
     output: 'Birinchi sotuvlar',
   },
   {
+    icon: 'chart-up' as IconName,
+
     when: 'Keyin',
     title: 'Savdoni yuritish',
     text: 'Start: 1 oy savdoni yuritamiz va xodimingizni o‘qitamiz, keyin 1 oy bepul konsultatsiya. Kalit topshirish: doimiy boshqaruv va har oyning 5-sanasigacha hisobot.',

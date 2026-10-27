@@ -88,32 +88,32 @@ export function Hero() {
       {/* Uzum uslubidagi yumshoq yorug'lik */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,0)_65%)]"
+        data-parallax="120" className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,0)_65%)]"
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-48 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(175,205,232,.55),rgba(175,205,232,0)_65%)]"
       />
-      <div className="container grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
+      <div data-hero-out className="container grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-500 shadow-card">
+          <p data-intro className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-500 shadow-card">
             <MapPin aria-hidden className="h-3.5 w-3.5 text-gold-600" />
             Samarqanddagi ishlab chiqaruvchi va ulgurji korxonalar uchun
           </p>
-          <h1 id="hero-title" className="mt-6 text-display font-extrabold text-ink">
+          <h1 data-intro id="hero-title" className="mt-6 text-display font-extrabold text-ink">
             Tovaringizni <span className="text-brand-600">Uzum Market</span> orqali butun O‘zbekistonga soting
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-500">
+          <p data-intro className="mt-6 max-w-xl text-lg leading-relaxed text-ink-500">
             Do‘kon ochish, kartochkalar, foto, narx, reklama va hisobot — hammasini Navdo jamoasi qiladi. Siz faqat tovar
             berasiz, do‘kon esa doim korxonangiz nomida qoladi.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div data-intro className="mt-9 flex flex-col gap-3 sm:flex-row">
             <AuditButton source="hero" size="lg" />
             <Button as="a" href="#jarayon" variant="secondary" size="lg">
               Qanday ishlaymiz
             </Button>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-500">
+          <ul data-intro className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-500">
             <li className="inline-flex items-center gap-2">
               <Timer aria-hidden className="h-4 w-4 text-gold-600" /> Audit 30–40 daqiqa
             </li>
@@ -126,7 +126,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[520px]">
+        <div data-intro className="relative mx-auto w-full max-w-[520px]">
           <div className="relative pl-0 sm:pl-16">
             {/* Desktop/planshet: panelning chap chetida */}
             <UzumCoin className="absolute -left-12 top-1/2 z-10 hidden w-40 -translate-y-1/2 sm:block lg:-left-16 lg:w-44" />

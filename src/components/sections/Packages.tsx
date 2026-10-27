@@ -1,6 +1,7 @@
-import { Check, Minus, KeyRound, Rocket } from 'lucide-react'
+import { Check, Minus } from 'lucide-react'
 import { comparison, packages, type Cell } from '../../data/content'
 import { AuditButton, Reveal, SectionHeading, cx } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 function CellValue({ v }: { v: Cell }) {
   if (v === true)
@@ -30,10 +31,9 @@ export function Packages() {
           lead="Narx tovarlar soni, kartochkalar va tanlangan paketga bog‘liq. Bepul auditdan keyin aniq hisob-kitob bilan yozma taklif beramiz."
         />
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-2" data-scroll-scale="0.86">
           {packages.map((p, i) => {
             const featured = p.id === 'kalit'
-            const Icon = featured ? KeyRound : Rocket
             return (
               <Reveal
                 key={p.id}
@@ -44,13 +44,8 @@ export function Packages() {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <span
-                    className={cx(
-                      'flex h-12 w-12 items-center justify-center rounded-2xl',
-                      featured ? 'bg-gold/15 text-gold' : 'bg-gold-50 text-gold-600',
-                    )}
-                  >
-                    <Icon aria-hidden className="h-6 w-6" />
+                  <span data-icon-host>
+                    <Icon3D name={featured ? 'key' : 'rocket'} />
                   </span>
                   {featured && (
                     <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-bold text-gold">To‘liq boshqaruv</span>

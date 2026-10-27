@@ -3,6 +3,7 @@ import { Lock } from 'lucide-react'
 import { results } from '../../data/content'
 import { useInView } from '../../hooks/useReveal'
 import { AuditButton, Reveal, SectionHeading } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 /** 40 mln → 400 mln so'm: brifdagi yagona aniq o'sish raqami. */
 function GrowthCompare() {
@@ -27,8 +28,9 @@ function GrowthCompare() {
   }, [inView])
 
   return (
-    <div ref={ref} className="rounded-4xl border border-line bg-white p-7 sm:p-10">
-      <p className="text-sm font-semibold text-ink-400">Jamoamiz boshqargan bitta do‘kon — oylik savdo</p>
+    <div ref={ref} data-icon-host className="relative rounded-4xl border border-line bg-white p-7 sm:p-10">
+      <Icon3D name="chart-up" size="lg" className="absolute right-6 top-6 sm:right-8 sm:top-8" />
+      <p className="max-w-[60%] text-sm font-semibold text-ink-400">Jamoamiz boshqargan bitta do‘kon — oylik savdo</p>
       <div className="mt-8 space-y-5">
         <div>
           <div className="flex items-baseline justify-between text-sm">
@@ -61,7 +63,7 @@ function GrowthCompare() {
 export function Results() {
   return (
     <section id="natijalar" aria-labelledby="natijalar-title" className="curve-top bg-paper py-20 lg:py-28">
-      <div className="container">
+      <div className="container" data-scroll-scale="0.94">
         <SectionHeading
           id="natijalar-title"
           eyebrow="Natijalar va tajriba"

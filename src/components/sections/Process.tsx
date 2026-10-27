@@ -2,6 +2,7 @@ import { useRef, useState, type KeyboardEvent } from 'react'
 import { ChevronLeft, ChevronRight, PackageCheck } from 'lucide-react'
 import { steps } from '../../data/content'
 import { AuditButton, Reveal, SectionHeading, cx } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 /** 7 bosqich: klaviatura bilan boshqariladigan tablist (strelkalar, Home/End). */
 export function Process() {
@@ -32,7 +33,7 @@ export function Process() {
 
   return (
     <section id="jarayon" aria-labelledby="jarayon-title" className="curve-top bg-paper py-20 lg:py-28">
-      <div className="container">
+      <div className="container" data-scroll-scale="0.9">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
             id="jarayon-title"
@@ -105,7 +106,11 @@ export function Process() {
               {active + 1}
             </span>
             <div key={active} className="relative animate-[fadein_.4s_ease]">
-              <span className="inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">{step.when}</span>
+              <div className="flex items-center gap-4" data-icon-host>
+                {/* key: har bosqichda ikonka qayta paydo bo'ladi */}
+                <Icon3D key={active} name={step.icon} size="lg" />
+                <span className="inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">{step.when}</span>
+              </div>
               <h3 className="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">{step.title}</h3>
               <p className="mt-4 max-w-lg text-lg leading-relaxed text-ink-500">{step.text}</p>
               <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-line px-4 py-3">

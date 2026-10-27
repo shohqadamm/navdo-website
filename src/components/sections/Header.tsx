@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Menu, Phone, X } from 'lucide-react'
 import { contacts, nav } from '../../data/content'
 import { AuditButton, Logo, cx } from '../ui/primitives'
+import { scrollToElement, startScroll, stopScroll } from '../../lib/smooth'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -33,9 +34,11 @@ export function Header() {
     if (!open) return
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
     document.body.style.overflow = 'hidden'
+    stopScroll()
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = ''
+      startScroll()
       window.removeEventListener('keydown', onKey)
     }
   }, [open])
@@ -112,7 +115,15 @@ export function Header() {
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    // Menyu ochiqligida Lenis to'xtatilgan — avval yopamiz, keyin scroll
+                    e.preventDefault()
+                    setOpen(false)
+                    window.setTimeout(() => {
+                      const el = document.getElementById(item.id)
+                      if (el) scrollToElement(el)
+                    }, 60)
+                  }}
                   className="flex items-baseline gap-4 py-4 text-2xl font-semibold tracking-tight"
                 >
                   <span className="text-xs font-medium text-ink-300">0{i + 1}</span>

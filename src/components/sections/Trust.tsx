@@ -1,6 +1,7 @@
-import { Check, ShieldCheck, X } from 'lucide-react'
+import { Check, X } from 'lucide-react'
 import { guarantees } from '../../data/content'
 import { Reveal, SectionHeading } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 const clauses = [
   { n: '2.1', t: '“Sof foyda” hisoblash formulasi', d: 'oldindan yoziladi' },
@@ -13,17 +14,17 @@ const clauses = [
 export function Trust() {
   return (
     <section aria-labelledby="trust-title" className="curve-top bg-white py-20 lg:py-28">
-      <div className="container grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      <div data-scroll-scale="0.9" className="container grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Shartnoma vizuali */}
         <Reveal className="relative order-2 lg:order-1">
-          <div aria-hidden className="absolute inset-4 -rotate-3 rounded-3xl border border-line bg-paper" />
+          <div aria-hidden data-parallax="-40" className="absolute inset-4 -rotate-3 rounded-3xl border border-line bg-paper" />
           <figure className="relative rounded-3xl border border-line bg-white p-6 shadow-card sm:p-8" aria-label="Shartnoma asosiy bandlari (namuna)">
             <div className="flex items-center justify-between border-b border-line pb-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-ink-400">Xizmat shartnomasi</p>
                 <p className="mt-1 font-bold">Navdo × Korxona</p>
               </div>
-              <ShieldCheck aria-hidden className="h-8 w-8 text-gold-600" />
+              <Icon3D name="shield" size="sm" />
             </div>
             <ul className="divide-y divide-line">
               {clauses.map((c) => (

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { problems } from '../../data/content'
 import { AuditButton, Reveal, SectionHeading, cx } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 /** Interaktiv: foydalanuvchi o'ziga tegishli holatlarni belgilaydi. */
 export function Problems() {
@@ -10,7 +11,7 @@ export function Problems() {
 
   return (
     <section id="muammo" aria-labelledby="muammo-title" className="curve-top bg-paper py-20 lg:py-28">
-      <div className="container">
+      <div className="container" data-scroll-scale="0.92">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <SectionHeading
             id="muammo-title"
@@ -32,6 +33,7 @@ export function Problems() {
               <Reveal as="li" key={p.title} delay={i * 50}>
                 <button
                   type="button"
+                  data-icon-host
                   aria-pressed={on}
                   onClick={() => toggle(i)}
                   className={cx(
@@ -40,7 +42,7 @@ export function Problems() {
                   )}
                 >
                   <span className="flex w-full items-center justify-between">
-                    <span className="text-xs font-semibold text-ink-300">0{i + 1}</span>
+                    <Icon3D name={p.icon} />
                     <span
                       className={cx(
                         'flex h-7 w-7 items-center justify-center rounded-full border transition-colors',
@@ -50,7 +52,7 @@ export function Problems() {
                       <Check aria-hidden className="h-4 w-4" />
                     </span>
                   </span>
-                  <span className="mt-8 text-lg font-bold tracking-tight">{p.title}</span>
+                  <span className="mt-6 text-lg font-bold tracking-tight">{p.title}</span>
                   <span className="mt-2 text-[15px] leading-relaxed text-ink-500">{p.text}</span>
                 </button>
               </Reveal>

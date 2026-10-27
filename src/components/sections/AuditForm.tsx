@@ -6,6 +6,7 @@ import { AUDIT_EVENT, type AuditDetail } from '../../lib/scroll'
 import { formatPhone, isPhoneComplete, toE164 } from '../../lib/phone'
 import { Button, Reveal, cx } from '../ui/primitives'
 import { Field } from '../ui/Field'
+import { Icon3D } from '../ui/Icon3D'
 
 type Values = { name: string; phone: string; company: string; channel: string; packageInterest: string; website: string }
 type Errors = Partial<Record<keyof Values, string>>
@@ -96,8 +97,11 @@ export function AuditForm() {
 
   return (
     <section id="audit" aria-labelledby="audit-title" className="curve-top bg-brand-600 py-20 text-white lg:py-28">
-      <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div data-scroll-scale="0.88" className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <Reveal>
+          <span data-icon-host className="mb-6 block">
+            <Icon3D name="gift" size="lg" />
+          </span>
           <p className="eyebrow !text-brand-100">
             <span aria-hidden className="h-0.5 w-6 rounded-full bg-gold" />
             Bepul audit

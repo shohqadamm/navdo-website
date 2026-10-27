@@ -18,7 +18,7 @@ export function Objections() {
 
   return (
     <section aria-labelledby="objections-title" className="curve-top bg-paper py-20 lg:py-28">
-      <div className="container">
+      <div className="container" data-scroll-scale="0.95">
         <SectionHeading
           id="objections-title"
           eyebrow="Ochiq gaplashamiz"

@@ -10,8 +10,10 @@ import { Trust } from './components/sections/Trust'
 import { Objections } from './components/sections/Objections'
 import { AuditForm } from './components/sections/AuditForm'
 import { Faq, Footer, MobileStickyCta } from './components/sections/Closing'
+import { useScrollFx } from './hooks/useScrollFx'
 
 export default function App() {
+  useScrollFx()
   return (
     <>
       <Header />

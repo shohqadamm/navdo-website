@@ -78,6 +78,17 @@ GitHub faqat kodni saqlaydi. GitHub Pages statik hosting bo'lgani uchun `/api/le
 
 Har `git push` dan keyin Vercel saytni avtomatik yangilaydi. Env o'zgartirilsa — **Redeploy** qiling.
 
+## Animatsiyalar
+
+- **Loader** — `index.html` dagi `#boot` (JS'siz darhol chiziladi: logo konturi → rang → "Navdo"). `src/components/Loader.tsx` uni 1,7 s dan keyin (opt-in'da 0,9 s, eng ko'pi 3 s) yopadi.
+  Logo SVG: `src/components/ui/NavdoMark.tsx`.
+- **Silliq scroll** — Lenis + GSAP ScrollTrigger, bitta joyda: `src/lib/smooth.ts`.
+- **Scroll effektlari** — `src/hooks/useScrollFx.ts`, data-atributlar bilan:
+  `data-scroll-scale="0.9"` (kirib kelganda kattalashadi), `data-parallax="-40"`, `data-hero-out`, `data-intro`.
+- **3D ikonkalar** — `src/components/ui/Icon3D.tsx`, rasmlar `public/icons/*.webp`.
+  Manba: [Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji) (MIT litsenziya).
+- `prefers-reduced-motion` yoqilgan foydalanuvchilarda animatsiyalar o'chadi.
+
 ## Keyin to'ldirish kerak
 
 - Mijozlar fikri — birinchi video-fikr tayyor bo'lgach (`Results.tsx` dagi izoh bloki o'rniga).

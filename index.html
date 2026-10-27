@@ -25,6 +25,33 @@
     />
   </head>
   <body>
+    <!-- Loader: JS yuklanmasdan oldin darhol chiziladi; src/components/Loader.tsx yopadi -->
+    <style>
+      #boot{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:#fff}
+      #boot .mark{width:104px;height:auto;overflow:visible}
+      #boot path{stroke-width:4;stroke-linejoin:round;fill-opacity:0;stroke-dasharray:1;stroke-dashoffset:1;animation:boot-draw 1s cubic-bezier(.65,0,.35,1) forwards,boot-fill .45s ease .85s forwards}
+      #boot .n{fill:#0466C8;stroke:#0466C8}
+      #boot .a{fill:#F8B614;stroke:#F8B614;animation-delay:.3s,1.05s}
+      #boot .arrow{animation:boot-shoot .6s cubic-bezier(.2,.9,.3,1.4) 1.05s both}
+      #boot .word{font:800 30px/1 Manrope,system-ui,sans-serif;letter-spacing:-.03em;color:#073A61;opacity:0;animation:boot-up .5s ease 1.1s forwards}
+      #boot .word small{display:block;margin-top:6px;font:500 12px/1 Manrope,system-ui,sans-serif;letter-spacing:.02em;color:#6B7280;text-align:center}
+      #boot .bar{position:absolute;left:50%;bottom:12vh;width:120px;height:3px;margin-left:-60px;border-radius:3px;background:#EEF5FB;overflow:hidden}
+      #boot .bar i{display:block;height:100%;width:100%;background:#F8B614;transform-origin:left;transform:scaleX(0);animation:boot-bar 1.6s cubic-bezier(.4,0,.2,1) forwards}
+      @keyframes boot-draw{to{stroke-dashoffset:0}}
+      @keyframes boot-fill{to{fill-opacity:1;stroke-width:0}}
+      @keyframes boot-shoot{from{transform:translate(-14px,14px)}to{transform:none}}
+      @keyframes boot-up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+      @keyframes boot-bar{to{transform:scaleX(1)}}
+      @media (prefers-reduced-motion:reduce){#boot *{animation-duration:.01ms!important;animation-delay:0s!important}}
+    </style>
+    <div id="boot" role="status" aria-label="Sayt yuklanmoqda">
+      <svg class="mark" viewBox="0 0 538 497" aria-hidden="true">
+        <path class="n" pathLength="1" d="M33.5 114.0 26.0 124.8 20.5 135.8 17.0 147.2 17.0 151.5 16.0 154.2 16.5 481.5 18.8 481.2 55.8 450.2 113.8 400.2 121.8 392.0 121.5 224.5 44.2 127.8 43.0 124.2 44.8 122.5 47.8 123.2 70.0 146.2 137.5 222.0 194.5 289.0 317.5 437.8 326.2 446.8 334.0 453.2 343.8 459.8 354.8 465.2 364.2 468.8 383.2 472.8 402.5 472.8 421.5 468.8 439.0 461.8 449.8 455.2 458.8 448.2 471.2 434.8 480.2 420.0 483.8 411.5 486.8 399.5 486.8 152.8 486.0 151.5 482.8 153.5 448.0 189.2 442.0 196.5 389.0 251.2 379.0 263.5 379.2 305.2 461.5 411.0 469.2 422.5 469.0 424.8 466.2 426.2 461.8 422.5 438.2 395.8 194.2 111.0 179.8 96.5 165.8 87.5 147.5 80.0 128.5 76.0 104.2 76.0 86.2 80.0 67.8 87.0 52.0 96.5 44.2 103.0Z"/>
+        <g class="arrow"><path class="a" pathLength="1" d="M521.5 15.2 519.2 14.8 404.8 71.0 349.5 99.8 348.8 101.5 351.2 102.8 395.5 112.8 397.8 114.2 397.8 115.2 389.0 125.5 374.0 140.2 347.0 169.5 305.5 211.8 303.5 215.0 304.8 215.8 367.8 216.0 369.0 217.8 369.0 250.0 370.5 251.2 479.8 137.5 481.5 137.2 484.8 139.2 519.0 168.2 521.2 168.5Z"/></g>
+      </svg>
+      <div class="word" aria-hidden="true">Navdo<small>yangi davr savdosi</small></div>
+      <div class="bar" aria-hidden="true"><i></i></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

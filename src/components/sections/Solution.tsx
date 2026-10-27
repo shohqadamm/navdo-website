@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowRight, Boxes, FileText, Store, Users2, BarChart3 } from 'lucide-react'
 import { advantages, solutionItems } from '../../data/content'
 import { AuditButton, Reveal, SectionHeading } from '../ui/primitives'
+import { Icon3D } from '../ui/Icon3D'
 
 function Connector() {
   return (
@@ -14,7 +15,7 @@ function Connector() {
 export function Solution() {
   return (
     <section id="yechim" aria-labelledby="yechim-title" className="curve-top bg-white py-20 lg:py-28">
-      <div className="container">
+      <div className="container" data-scroll-scale="0.95">
         <SectionHeading
           id="yechim-title"
           eyebrow="Yechim"
@@ -81,7 +82,9 @@ export function Solution() {
         <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {advantages.map((a, i) => (
             <Reveal key={a.title} delay={i * 60} className="bg-white p-6 sm:p-8">
-              <p className="text-sm font-bold text-brand-600">0{i + 1}</p>
+              <div data-icon-host>
+                <Icon3D name={a.icon} />
+              </div>
               <h3 className="mt-4 text-lg font-bold tracking-tight">{a.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-500">{a.text}</p>
             </Reveal>
